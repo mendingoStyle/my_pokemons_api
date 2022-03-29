@@ -1,0 +1,31 @@
+version: '3.7'
+services:
+  main:
+    container_name: my_pokemons-api
+    build:
+      context: .
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - ${APP_PORT}:${APP_PORT_INTERN}
+    env_file:
+      - .env
+    depends_on:
+      - db
+  db:
+    container_name: db_my_pokemons
+    platform: linux/x86_64
+    image: mysql:5.7
+    volumes:
+      - mysql-db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_USER: ${DB_USERNAME}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+    ports:
+      - ${DB_PORT}:${DB_PORT_INTERN}
+ 
+volumes:
+  mysql-db:
+

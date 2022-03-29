@@ -1,0 +1,11 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "compilerOptions": {
+    "watchAssets": true,
+    "deleteOutDir": true,
+    "plugins": ["@nestjs/swagger/plugin"],
+    "exclude": ["db", "node_modules", "logs", "tmp"],
+    "include": ["src"]
+  }
+}
