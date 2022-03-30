@@ -114,13 +114,13 @@ export class QueryParamsService {
     return { total, page, limit, lastPage: Math.ceil(total / limit), data }
   }
 
-  async getTableDataMilestoneDb(
+  async getTableDataPokemonDb(
     { page, limit, ...queryParams }: IQuery,
     entityTarget,
     relations?: IRelation[]
   ): Promise<any> {
     const manager = getConnectionManager()
-    const connection = manager.get('milestonedb_read')
+    const connection = manager.get('pokemonsdb_read')
     !connection.isConnected && connection.connect()
 
     return this.getTableData(

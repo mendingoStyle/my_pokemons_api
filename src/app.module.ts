@@ -7,6 +7,8 @@ import { AppController } from './app.controller'
 import { QueryParamsModule } from 'app/query-params/query-params.module'
 import { AuthModule } from 'app/auth/auth.module'
 import { UtilsModule } from 'app/utils/utils.module'
+import { PokemonsModule } from 'app/pokemons/pokemons.module'
+import { UploadModule } from 'app/upload/upload.module'
 
 
 @Module({
@@ -24,10 +26,12 @@ import { UtilsModule } from 'app/utils/utils.module'
       host: process.env.DB_WRITE_HOST,
       name: 'pokemonsdb_write',
     }),
-
+    PokemonsModule,
     AuthModule,
     UtilsModule,
     QueryParamsModule,
+    UploadModule,
+    
 
   ],
   controllers: [AppController],

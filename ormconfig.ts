@@ -6,7 +6,7 @@ module.exports = {
   logging: process.env.DB_LOGGING === 'true' ?? false,
   port: Number(process.env.DB_PORT),
   entities: ['dist/**/*.entity.*{.ts,.js}'],
-  migrations: ['dist/**/pokemonsMigration/*{.ts,.js}'],
+  migrations: ['dist/**/pokemonsMigrations/*{.ts,.js}'],
   database: process.env.DB_DATABASE,
   keepConnectionAlive: true,
   synchronize: false,

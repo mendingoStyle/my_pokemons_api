@@ -22,6 +22,7 @@ export class createPokemons1648584474224 implements MigrationInterface {
             atk INT DEFAULT 0,
             def INT DEFAULT 0,
             sta int DEFAULT 0,
+            pokedex_number INT DEFAULT 0;
             legendary BIT DEFAULT 0,
             aquireable BIT DEFAULT 1,
             spaws BIT DEFAULT 1,
