@@ -6,8 +6,8 @@ COPY  . .
 
 RUN npm i
 
-RUN npm run migration
+RUN npm run build
 
 EXPOSE 3333
 
-CMD npm run start
+CMD npm start

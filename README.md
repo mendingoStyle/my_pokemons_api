@@ -2,13 +2,9 @@
 
 rodar os comandos:
 
-- npm i
-
-- docker compose up 
-
-- npm run migration
-
-- npm start
+-> npm i
+-> npm run migration
+-> docker compose up -d --build
 
 
 
