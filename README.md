@@ -1,11 +1,8 @@
 # Projeto: pokemons
 
-#rodar os comandos:
+#rodar os comandos na ordem:
 
 -> npm i
-
--> npm run migration
-
 -> docker compose up -d --build
 
 -> rota de leitura de arquivo e carregamento de pokemons -> \fileUpload
