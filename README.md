@@ -1,15 +1,15 @@
 # Projeto: pokemons
 
-rodar os comandos:
+#rodar os comandos:
 
-# npm i
+-> npm i
 
-# npm run migration
+-> npm run migration
 
-# docker compose up -d --build
+-> docker compose up -d --build
 
-# Link do backend: http://localhost:3333/
-# rota de leitura de arquivo e carregamento de pokemons -> \fileUpload
+-> Link do backend: http://localhost:3333/
+-> rota de leitura de arquivo e carregamento de pokemons -> \fileUpload
 
 ##### O DESAFIO:
 
