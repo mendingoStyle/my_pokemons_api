@@ -1,5 +1,5 @@
 import {forwardRef, Module } from '@nestjs/common';
-import { PokemonsModule } from 'app/pokemons/pokemons.module';
+import { PokemonsModule } from '../pokemons/pokemons.module';
 import { FileReaderPokemons } from './file.reader';
 import { FormatterService } from './formatter.service';
 import { UtilsService } from './utils.service';

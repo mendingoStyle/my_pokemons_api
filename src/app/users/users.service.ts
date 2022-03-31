@@ -16,6 +16,7 @@ export class UsersService {
     @InjectRepository(Users, 'pokemonsdb_read')
     private readonly userRead: Repository<Users>,
     @InjectConnection('pokemonsdb_write') private connection: Connection,
+
     private utils: UtilsService
   ) { }
 
@@ -92,8 +93,14 @@ export class UsersService {
       key: 'user', value: user.user, errorMessage: 'usuario já cadastrado'
     }]
     await this.validateIfExists(validate)
-    const userSave = await this.userWrite.save(user)
-    return userSave
+    return this.connection.transaction(async (transaction) => {
+      const userSave = await transaction.save(Users, {
+        ...user,
+        password: hashedPassword,
+      })
+      return userSave
+    })
+
 
   }
   async update(id: number, password: string) {

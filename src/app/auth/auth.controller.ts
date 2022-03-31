@@ -4,8 +4,8 @@ import {
   Body,
   ValidationPipe,
 } from '@nestjs/common'
-import { CreateUserResultDto } from 'app/users/dto/create-user.dto'
-import { UsersService } from 'app/users/users.service'
+import { CreateUserResultDto } from '../users/dto/create-user.dto'
+import { UsersService } from '../users/users.service'
 
 @Controller('createUser')
 export class AuthController {

@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 import { formidable } from 'formidable';
 import { rename, readdir, existsSync, mkdirSync } from 'fs';
-import { FileReaderPokemons } from 'app/utils/file.reader';
+import { FileReaderPokemons } from '../utils/file.reader';
 
 @Injectable()
 export class UploadService {
