@@ -8,7 +8,6 @@
 
 -> docker compose up -d --build
 
--> Link do backend: http://localhost:3333/
 -> rota de leitura de arquivo e carregamento de pokemons -> \fileUpload
 -> Get pokemons exemplos:
    
