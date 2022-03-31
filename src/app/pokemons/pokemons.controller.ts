@@ -13,7 +13,7 @@ import { PokemonsService } from './pokemons.service'
 
 
 @ApiTags('Pokemons')
-//@UseGuards(JwtAuthGuard)
+@UseGuards(JwtAuthGuard)
 @Controller('pokemons')
 export class PokemonsController {
   constructor(private readonly pokemonsService: PokemonsService) { }

@@ -9,6 +9,9 @@ import { AuthModule } from './app/auth/auth.module'
 import { UtilsModule } from './app/utils/utils.module'
 import { PokemonsModule } from './app/pokemons/pokemons.module'
 import { UploadModule } from './app/upload/upload.module'
+import { ChangePasswordModule } from 'app/changePassword/changePassword.module'
+import { RecoveryPasswordModule } from 'app/recoveryPassword/recoveryPassword.module'
+import { ForgetPasswordModule } from 'app/forgetPassword/forgetPassword.module'
 
 
 @Module({
@@ -16,13 +19,24 @@ import { UploadModule } from './app/upload/upload.module'
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-
+    TypeOrmModule.forRoot({
+      ...pokemonsdb,
+      host: process.env.DB_READ_HOST,
+      name: 'pokemonsdb_read',
+    }),
+    TypeOrmModule.forRoot({
+      ...pokemonsdb,
+      host: process.env.DB_WRITE_HOST,
+      name: 'pokemonsdb_write',
+    }),
     PokemonsModule,
     AuthModule,
     UtilsModule,
     QueryParamsModule,
     UploadModule,
-    
+    ForgetPasswordModule,
+    ChangePasswordModule,
+    RecoveryPasswordModule
 
   ],
   controllers: [AppController],

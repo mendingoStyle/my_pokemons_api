@@ -30,15 +30,20 @@ export class ForgetPasswordService {
     const url = 'https://' + this.config.get('FRONT_URL') + 'recoveryPassword/' + acessToken.accessToken
     const transporter = await createTransport({
       host: this.config.get('HOST_EMAIL'),
-      port: this.config.get('PORT_EMAIL'),
+      port: user.email,
+      secure: false,
       auth: {
         user: this.config.get('EMAIL'),
         pass: this.config.get('PASSWORD_EMAIL')
-      }
+      },
+
     });
+
+
+
     const mailOptions = {
       from: this.config.get('EMAIL'),
-      to: userExists.email,
+      to: 'lualpha_foz@hotmail.com',
       subject: 'Recovery Password POKEMON SYSTEM',
       html: '<a href="' + url + '">' + url + '</a>'
     };
@@ -47,6 +52,7 @@ export class ForgetPasswordService {
       return await transporter.sendMail(mailOptions,
         async function (error, info) {
           if (error) {
+            console.log(error)
             resolve({ message: 'Erro ao enviar o email' });
           } else {
             resolve({ message: 'Email enviado ao remetente' });
