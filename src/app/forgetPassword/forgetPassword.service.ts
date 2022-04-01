@@ -30,7 +30,7 @@ export class ForgetPasswordService {
     const url = 'https://' + this.config.get('FRONT_URL') + 'recoveryPassword/' + acessToken.accessToken
     const transporter = await createTransport({
       host: this.config.get('HOST_EMAIL'),
-      port: user.email,
+      port: parseInt(this.config.get('PORT_EMAIL')),
       secure: false,
       auth: {
         user: this.config.get('EMAIL'),
