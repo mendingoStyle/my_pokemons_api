@@ -43,7 +43,7 @@ export class ForgetPasswordService {
 
     const mailOptions = {
       from: this.config.get('EMAIL'),
-      to: 'lualpha_foz@hotmail.com',
+      to: userExists.email,
       subject: 'Recovery Password POKEMON SYSTEM',
       html: '<a href="' + url + '">' + url + '</a>'
     };
